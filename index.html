@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jorge Rojas — Diseño Industrial Gráfico</title>
+  <meta name="description" content="Portfolio profesional de Jorge Rojas, Diseñador Industrial Gráfico especializado en retail, roll out de marca y visual merchandising." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Skip link para navegación por teclado (WCAG 2.4.1) -->
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="#hero" class="nav__logo" aria-label="Jorge Rojas — Inicio">JRDI</a>
+    <ul class="nav__links" role="list">
+      <li><a href="#sobre">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </nav>
+
+  <!-- Menú mobile -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación móvil" aria-hidden="true">
+    <ul role="list">
+      <li><a href="#sobre">Sobre mí</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero" id="hero" aria-label="Presentación">
+      <div class="hero__photo" aria-hidden="true">
+        <img src="img/jorge.jpg" alt="" role="presentation" onerror="this.style.display='none'" />
+      </div>
+      <div class="hero__photo-overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <div class="hero__titles" aria-label="Jorge Rojas, Diseñador Industrial Gráfico">
+          <h1 class="hero__line hero__line--neon">DISEÑO</h1>
+          <p class="hero__line hero__line--gray" aria-hidden="true">Industrial</p>
+          <div class="hero__cluster" aria-hidden="true">
+            <span class="hero__tag hero__tag--sm">roll out de marca</span>
+            <span class="hero__tag hero__tag--lg hero__tag--neon">gráfico</span>
+          </div>
+          <div class="hero__cluster hero__cluster--bottom" aria-hidden="true">
+            <span class="hero__tag hero__tag--italic">visual merchandising</span>
+            <span class="hero__tag hero__tag--md">espacios de marca</span>
+          </div>
+        </div>
+        <nav class="hero__actions" aria-label="Accesos rápidos">
+          <a href="#proyectos" class="btn btn--fill">Proyectos</a>
+          <a href="#contacto" class="btn btn--outline">Contacto</a>
+        </nav>
+      </div>
+      <div class="hero__bio" aria-label="Breve biografía">
+        <p>Hola. Soy Jorge y estudié <strong>Diseño<br/>Industrial</strong> en Duoc UC (2010-2015).</p>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section class="sobre" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+
+        <div class="sobre__row">
+          <div class="sobre__col">
+            <h2 class="sobre__heading" id="sobre-titulo">SOBRE <span class="neon">MÍ</span></h2>
+            <p class="sobre__text">He desarrollado mi carrera principalmente en <strong>retail</strong> y <strong>mobiliario</strong>, participando en todo el proceso: desde la conceptualización y el <strong>modelado 3D</strong> hasta la logística de producción y la supervisión en terreno.</p>
+            <p class="sobre__text">Más allá del tecnicismo industrial, veo el diseño como una herramienta de <strong>comunicación</strong>, <strong>identidad y conexión.</strong></p>
+          </div>
+          <div class="sobre__col reveal">
+            <h2 class="sobre__heading">EXPERIENCIA</h2>
+            <ol class="exp-list" aria-label="Historial de experiencia laboral">
+              <li class="exp-item">
+                <time class="exp-period" datetime="2021/2024">2021 – 2024</time>
+                <span class="exp-role">Diseñador Integral — Gorila Amarillo</span>
+              </li>
+              <li class="exp-item">
+                <time class="exp-period" datetime="2019/2021">2019 – 2021</time>
+                <span class="exp-role">Jefe de Proyecto — Nexus Exp</span>
+              </li>
+              <li class="exp-item">
+                <time class="exp-period" datetime="2016/2019">2016 – 2019</time>
+                <span class="exp-role">Diseñador I&amp;D — Taller Gorila</span>
+              </li>
+              <li class="exp-item">
+                <time class="exp-period" datetime="2015/2016">2015 – 2016</time>
+                <span class="exp-role">Diseñador 3D — Truss UC</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="sobre__divider" role="separator" aria-hidden="true"></div>
+
+        <div class="sobre__row">
+          <div class="sobre__col">
+            <h2 class="sobre__heading">FILOSOFÍA DE <span class="neon">DISEÑO</span></h2>
+            <p class="sobre__text">Creo en el <strong>diseño</strong> como un proceso <strong>narrativo</strong> donde cada proyecto es una oportunidad de comunicar algo con sentido, no solo desde la estética.</p>
+            <p class="sobre__text">Busco el rasgo <strong>distintivo</strong> de cada propuesta: ese elemento que, desde la <strong>semántica</strong> emocional, concentra el mensaje y genera un <strong>impacto</strong> memorable.</p>
+          </div>
+          <div class="sobre__col reveal">
+            <h2 class="sobre__heading">METODOLOGÍA</h2>
+            <div class="steps" role="list" aria-label="Etapas del proceso de diseño">
+              <div class="steps__row">
+                <div class="step" role="listitem"><span class="step__num" aria-hidden="true">00</span><span class="step__lbl">Brief</span></div>
+                <div class="step" role="listitem"><span class="step__num" aria-hidden="true">01</span><span class="step__lbl">Concepto</span></div>
+                <div class="step" role="listitem"><span class="step__num" aria-hidden="true">02</span><span class="step__lbl">Diseñar</span></div>
+              </div>
+              <div class="steps__row">
+                <div class="step step--half" role="listitem"><span class="step__num" aria-hidden="true">03</span><span class="step__lbl">Validar</span></div>
+                <div class="step step--half" role="listitem"><span class="step__num" aria-hidden="true">04</span><span class="step__lbl">Ejecutar</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROYECTOS + EXPLORACIONES -->
+    <section class="proyectos" id="proyectos" aria-labelledby="proyectos-titulo">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="proyectos-titulo">Proyectos</h2>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <div class="container">
+          <div class="cat-label">
+            <h3 class="cat-title">Roll Out</h3>
+            <p class="cat-desc">Implementar una marca global en el mundo físico: que cada espacio cuente la misma historia.</p>
+          </div>
+        </div>
+        <ul class="proj-grid proj-grid--3" role="list" aria-label="Proyectos de Roll Out">
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/nike.jpg" alt="Proyecto Nike — campañas en tiendas Bold, The Line y multitiendas de Santiago" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Nike</span>
+              <p>Múltiples campañas en tiendas Bold, The Line y multitiendas de Santiago, 2021–2023.</p>
+            </div>
+          </li>
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/puma.jpg" alt="Proyecto Puma — campañas a lo largo de Chile, de La Serena a Concepción" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Puma</span>
+              <p>Campañas a lo largo de todo el país, desde La Serena hasta Concepción, 2022–2024.</p>
+            </div>
+          </li>
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/adidas.jpg" alt="Proyecto Adidas — puntos de venta en Costanera Center, MUT y Parque Arauco" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Adidas</span>
+              <p>Adaptación de puntos de venta en Costanera Center, MUT, Parque Arauco, 2021–2024.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="container">
+          <div class="cat-label">
+            <h3 class="cat-title">Visual Merchandising</h3>
+            <p class="cat-desc">Un concepto y su puesta en escena para contar una historia que conecta emocionalmente.</p>
+          </div>
+        </div>
+        <ul class="proj-grid proj-grid--2" role="list" aria-label="Proyectos de Visual Merchandising">
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/bamers.jpg" alt="Bamers Vitrinas Otoño — burbuja de naturaleza desde la semántica del producto" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Bamers — Vitrinas Otoño</span>
+              <p>Una pausa en el ruido visual: burbuja de naturaleza desde la semántica del producto.</p>
+            </div>
+          </li>
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/bold.jpg" alt="Bold Focal y Zapatillero — elemento Highlighter con la luz como protagonista" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Bold — Focal y Zapatillero</span>
+              <p>Elemento de alto impacto tipo Highlighter: luz como protagonista de la novedad.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cat-block">
+        <div class="container">
+          <div class="cat-label">
+            <h3 class="cat-title">Espacios de Marca</h3>
+            <p class="cat-desc">El branding a veces se habita. La identidad en espacios físicos donde cada material comunica.</p>
+          </div>
+        </div>
+        <ul class="proj-grid proj-grid--3" role="list" aria-label="Proyectos de Espacios de Marca">
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/pepsi.jpg" alt="Pepsi Sala de Reunión — sala corporativa transformada con actitud Brooklyn" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Pepsi — Sala de Reunión</span>
+              <p>De sala corporativa a espacio habitable con la actitud Brooklyn de Pepsi.</p>
+            </div>
+          </li>
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/nescafe.jpg" alt="Nescafé Buin Zoo — cafetería Mombasa transformada en refugio de permanencia" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Nescafé — Buin Zoo</span>
+              <p>Cafetería Mombasa: zona de paso transformada en refugio de permanencia.</p>
+            </div>
+          </li>
+          <li class="proj-card reveal">
+            <div class="proj-img">
+              <img src="img/adidas-mut.jpg" alt="Adidas Hangout MUT — escenario multipropósito donde la comunidad habita la marca" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Adidas — Hangout MUT</span>
+              <p>Escenario multipropósito donde la comunidad habita la marca, no solo la consume.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="cat-block cat-block--last">
+        <div class="container">
+          <div class="cat-label">
+            <h3 class="cat-title">Exploraciones</h3>
+            <p class="cat-desc">No todo necesita un propósito. Materiales, formas y oficios por el placer de descubrir.</p>
+          </div>
+        </div>
+        <ul class="proj-grid proj-grid--2" role="list" aria-label="Proyectos de exploración personal">
+          <li class="proj-card reveal">
+            <div class="proj-img proj-img--tall">
+              <img src="img/lumina.jpg" alt="Lumina III — lámpara de sobremesa en madera terciada y corte láser" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Lumina III</span>
+              <p>Lámpara de sobremesa en madera terciada y láser. Calces, referencias arquitectónicas y esparcimiento de luz.</p>
+            </div>
+          </li>
+          <li class="proj-card reveal">
+            <div class="proj-img proj-img--tall">
+              <img src="img/goteo.jpg" alt="Goteo — vasija cerámica con acabado negro metalizado" onerror="this.parentElement.classList.add('no-img')" />
+            </div>
+            <div class="proj-info">
+              <span class="proj-marca">Goteo</span>
+              <p>Vasija cerámica con acabado negro metalizado. El interior derivó por accidente en una práctica de pintura.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="contacto-titulo">Contacto</h2>
+        </div>
+        <p class="contacto__invite reveal">¿Tienes un proyecto en mente?<br/>Hablemos.</p>
+        <address class="contacto__links">
+          <a href="mailto:jrojasmo89@gmail.com" class="contacto__link reveal" aria-label="Enviar email a jrojasmo89@gmail.com">
+            <span class="contacto__lbl">Email</span>
+            <span class="contacto__val">jrojasmo89@gmail.com</span>
+          </a>
+          <a href="tel:+56994848677" class="contacto__link reveal" aria-label="Llamar al +56 9 9484 8677">
+            <span class="contacto__lbl">Teléfono</span>
+            <span class="contacto__val">+56 9 9484 8677</span>
+          </a>
+          <a href="https://linkedin.com/in/jorgerojasindustrialdisenio" target="_blank" rel="noopener noreferrer" class="contacto__link reveal" aria-label="Ver perfil de LinkedIn de Jorge Rojas (abre en nueva pestaña)">
+            <span class="contacto__lbl">LinkedIn</span>
+            <span class="contacto__val">jorgerojasindustrialdiseño</span>
+          </a>
+        </address>
+      </div>
+      <div class="contacto__bg" aria-hidden="true">JR</div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <span>© 2026 Jorge Rojas</span>
+      <span>Diseño Industrial Gráfico</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
