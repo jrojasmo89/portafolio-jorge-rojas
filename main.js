@@ -57,47 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // --- Cursor personalizado (solo desktop) ---
-  if (window.matchMedia('(pointer: fine)').matches) {
-    const dot  = document.createElement('div');
-    const ring = document.createElement('div');
-
-    dot.style.cssText = `
-      position:fixed; width:5px; height:5px;
-      background:#CCFF00; border-radius:50%;
-      pointer-events:none; z-index:9999;
-      transform:translate(-50%,-50%);
-    `;
-    ring.style.cssText = `
-      position:fixed; width:26px; height:26px;
-      border:1px solid rgba(204,255,0,0.3); border-radius:50%;
-      pointer-events:none; z-index:9998;
-      transform:translate(-50%,-50%);
-      transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, left 0.1s ease, top 0.1s ease;
-    `;
-
-    document.body.appendChild(dot);
-    document.body.appendChild(ring);
-
-    document.addEventListener('mousemove', e => {
-      dot.style.left  = e.clientX + 'px';
-      dot.style.top   = e.clientY + 'px';
-      ring.style.left = e.clientX + 'px';
-      ring.style.top  = e.clientY + 'px';
-    });
-
-    document.querySelectorAll('a, .proj-card, .step, .btn').forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        ring.style.width  = '44px';
-        ring.style.height = '44px';
-        ring.style.borderColor = 'rgba(204,255,0,0.55)';
-      });
-      el.addEventListener('mouseleave', () => {
-        ring.style.width  = '26px';
-        ring.style.height = '26px';
-        ring.style.borderColor = 'rgba(204,255,0,0.3)';
-      });
-    });
-  }
+  // --- Cursor personalizado removido a petición del usuario ---
 
 });
