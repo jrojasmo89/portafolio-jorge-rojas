@@ -20,7 +20,6 @@
 html { scroll-behavior: smooth; }
 body {
   background-color: var(--negro);
-  background-image: url('img/bg-texture.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
