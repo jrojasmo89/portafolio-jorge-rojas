@@ -1,247 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Puma — Roll Out · Jorge Rojas</title>
-  <meta name="description" content="Escala nacional. Desde La Serena hasta Concepción, un solo estándar de identidad."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Roll Out Puma: campañas a lo largo de Chile desde La Serena hasta Concepción, 2022–2024." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-/* Páginas de detalle — usa variables de style.css */
-.proj-detail-wrap { width: 100%; }
-
-/* HERO */
-.pdx-hero { position:relative; min-height:70vh; display:flex; align-items:flex-end; overflow:hidden; background:var(--negro); }
-.pdx-hero-bg { position:absolute; inset:0; background-size:cover; background-position:center 35%; filter:brightness(.3); transform:scale(1.05); transition:transform 8s ease; }
-.pdx-hero:hover .pdx-hero-bg { transform:scale(1); }
-.pdx-hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,var(--negro) 0%,transparent 60%); }
-.pdx-hero-inner { position:relative; z-index:2; max-width:var(--max-w); margin:0 auto; padding:4rem var(--pad-x); width:100%; }
-.pdx-back { display:inline-flex; align-items:center; gap:8px; font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--gris-dim); text-decoration:none; margin-bottom:2rem; transition:color .2s; }
-.pdx-back:hover { color:var(--neon); }
-.pdx-back svg { width:16px; height:16px; }
-.pdx-cat { display:block; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--neon); margin-bottom:12px; }
-.pdx-title { font-size:clamp(2.5rem,8vw,6rem); font-weight:700; line-height:.95; color:var(--gris); margin:0 0 16px; }
-.pdx-sub { font-size:15px; color:var(--gris-dim); font-weight:300; max-width:500px; line-height:1.65; }
-
-/* META STRIP */
-.pdx-meta { background:var(--negro-2); border-bottom:1px solid var(--gris-off); width:100%; }
-.pdx-meta-row { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x); display:flex; flex-wrap:wrap; }
-.pdx-meta-item { flex:1 1 160px; padding:20px 0 20px; border-right:1px solid var(--gris-off); padding-right:32px; margin-right:32px; }
-.pdx-meta-item:last-child { border-right:none; }
-.pdx-meta-lbl { display:block; font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--neon); margin-bottom:5px; }
-.pdx-meta-val { font-size:13px; color:var(--gris); font-weight:500; }
-
-/* SECCIONES DE CONTENIDO */
-.pdx-section { padding:5rem 0; border-bottom:1px solid var(--gris-off); width:100%; }
-.pdx-section-dark { background:var(--negro-2); }
-.pdx-wrap { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x); width:100%; box-sizing:border-box; }
-.pdx-wrap-narrow { max-width:860px; margin:0 auto; padding:0 var(--pad-x); width:100%; box-sizing:border-box; }
-.pdx-label { display:block; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--neon); margin-bottom:16px; }
-.pdx-heading { font-size:clamp(1.6rem,3.5vw,2.6rem); font-weight:700; color:var(--gris); line-height:1.1; margin:0 0 20px; }
-.pdx-text { font-size:14px; color:var(--gris-dim); line-height:1.9; margin-bottom:14px; }
-.pdx-text strong { color:var(--gris); font-weight:600; }
-
-/* GALERÍA */
-.pdx-gallery { width:100%; background:var(--negro); padding:4rem 0; }
-.pdx-gallery-inner { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x); width:100%; box-sizing:border-box; }
-.pdx-gallery-label { display:block; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--neon); margin-bottom:20px; }
-.pdx-grid { display:grid; gap:4px; width:100%; box-sizing:border-box; }
-.pdx-img { overflow:hidden; background:var(--negro-3); display:block; width:100%; }
-.pdx-img img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease, filter .4s ease; filter:brightness(.85); }
-.pdx-img:hover img { transform:scale(1.04); filter:brightness(1); }
-.pdx-h-sm  { height:220px; }
-.pdx-h-md  { height:320px; }
-.pdx-h-lg  { height:420px; }
-.pdx-h-xl  { height:520px; }
-.pdx-h-xxl { height:620px; }
-
-/* SPLIT */
-.pdx-split { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
-
-/* CHALLENGES */
-.pdx-challenges { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; margin-top:24px; }
-.pdx-challenge { background:var(--gris-off); border-top:2px solid var(--neon); padding:24px; }
-.pdx-ch-num { font-size:2rem; font-weight:700; color:var(--neon); opacity:.2; line-height:1; margin-bottom:10px; }
-.pdx-ch-title { font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gris); margin-bottom:8px; }
-.pdx-ch-text { font-size:13px; color:var(--gris-dim); line-height:1.7; }
-
-/* TOOLS */
-.pdx-tools { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:8px; margin-top:20px; }
-.pdx-tool { display:flex; align-items:flex-start; gap:10px; padding:14px; background:var(--gris-off); }
-.pdx-tool-dot { width:6px; height:6px; background:var(--neon); border-radius:50%; margin-top:5px; flex-shrink:0; }
-.pdx-tool-name { font-size:12px; font-weight:600; color:var(--gris); margin-bottom:3px; }
-.pdx-tool-desc { font-size:11px; color:var(--gris-dim); }
-
-/* METRICS */
-.pdx-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:2px; margin-top:24px; }
-.pdx-metric { background:var(--negro-3); padding:28px 16px; text-align:center; }
-.pdx-metric-val { font-size:2.2rem; font-weight:700; color:var(--neon); line-height:1; margin-bottom:8px; }
-.pdx-metric-lbl { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--gris-dim); }
-
-/* HIGHLIGHT */
-.pdx-highlight { background:var(--neon); padding:4rem 0; width:100%; }
-.pdx-hl-inner { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x); }
-.pdx-hl-label { display:block; font-size:10px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(0,0,0,.4); margin-bottom:14px; }
-.pdx-hl-quote { font-size:clamp(1.1rem,2.5vw,1.8rem); font-weight:700; color:#000; line-height:1.35; max-width:820px; margin:0; }
-
-/* TAGS */
-.pdx-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:20px; }
-.pdx-tag { font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border:1px solid var(--gris-off); color:var(--gris-dim); }
-
-/* NAV ENTRE PROYECTOS */
-.pdx-nav { background:var(--negro-2); border-top:1px solid var(--gris-off); padding:3rem 0; width:100%; }
-.pdx-nav-inner { max-width:var(--max-w); margin:0 auto; padding:0 var(--pad-x); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
-.pdx-nav-lbl { display:block; font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--gris-dim); margin-bottom:6px; }
-.pdx-nav-link { font-size:1rem; font-weight:700; color:var(--gris); text-decoration:none; transition:color .2s; }
-.pdx-nav-link:hover { color:var(--neon); }
-
-/* RESPONSIVE */
-@media (max-width:1024px) {
-  .pdx-split { gap:2.5rem; }
-}
-@media (max-width:768px) {
-  .pdx-split { grid-template-columns:1fr; gap:2rem; }
-  .pdx-grid { grid-template-columns:1fr 1fr !important; }
-  .pdx-img { grid-column:span 1 !important; }
-  .pdx-h-sm,.pdx-h-md,.pdx-h-lg,.pdx-h-xl,.pdx-h-xxl { height:180px; }
-}
-</style>
+    .back-link {display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(217,217,217,0.5);text-decoration:none;transition:color .2s;}
+    .back-link:hover{color:var(--neon);}
+    .back-link svg{width:16px;height:16px;}
+    .proj-hero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;background:#0a0a0a;}
+    .proj-hero__bg{position:absolute;inset:0;background-image:url('img/puma.jpg');background-size:cover;background-position:center 35%;filter:brightness(.3);transform:scale(1.05);transition:transform 8s ease;}
+    .proj-hero:hover .proj-hero__bg{transform:scale(1);}
+    .proj-hero__overlay{position:absolute;inset:0;background:linear-gradient(to top,#0a0a0a 0%,transparent 60%);}
+    .proj-hero__content{position:relative;z-index:2;padding:4rem var(--pad-x,1.5rem);max-width:900px;}
+    .proj-hero__cat{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--neon);margin-bottom:.75rem;display:block;}
+    .proj-hero__title{font-size:clamp(2.5rem,8vw,6rem);font-weight:700;line-height:.95;color:#fff;margin:0 0 1rem;}
+    .proj-hero__sub{font-size:1rem;color:rgba(255,255,255,.55);font-weight:300;max-width:500px;line-height:1.6;}
+    .proj-meta{background:#111;border-bottom:1px solid rgba(255,255,255,.06);}
+    .proj-meta__inner{display:flex;flex-wrap:wrap;}
+    .proj-meta__item{flex:1 1 160px;padding:1.5rem var(--pad-x,1.5rem);border-right:1px solid rgba(255,255,255,.06);}
+    .proj-meta__item:last-child{border-right:none;}
+    .proj-meta__lbl{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--neon);display:block;margin-bottom:.35rem;}
+    .proj-meta__val{font-size:.85rem;color:rgba(255,255,255,.75);font-weight:500;}
+    .proj-section{padding:5rem 0;border-bottom:1px solid rgba(255,255,255,.05);}
+    .proj-section:last-child{border-bottom:none;}
+    .proj-section__inner{max-width:1200px;margin:0 auto;padding:0 var(--pad-x,1.5rem);}
+    .proj-section--split .proj-section__inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+    @media(max-width:768px){.proj-section--split .proj-section__inner{grid-template-columns:1fr;gap:2rem;}}
+    .proj-section__label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--neon);margin-bottom:1.25rem;display:block;}
+    .proj-section__heading{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;color:#fff;line-height:1.1;margin:0 0 1.5rem;}
+    .proj-section__text{font-size:.95rem;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:1.25rem;}
+    .proj-section__text strong{color:rgba(255,255,255,.9);font-weight:600;}
+    .proj-gallery{padding:4rem 0;background:#080808;}
+    .proj-gallery__inner{max-width:1200px;margin:0 auto;padding:0 var(--pad-x,1.5rem);}
+    .gallery-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:.75rem;margin-top:2rem;}
+    .gallery-item{overflow:hidden;background:#111;}
+    .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,filter .5s ease;filter:brightness(.88);}
+    .gallery-item:hover img{transform:scale(1.04);filter:brightness(1);}
+    .gallery-item--main{grid-column:span 7;min-height:420px;}
+    .gallery-item--side{grid-column:span 5;min-height:420px;}
+    .gallery-item--wide{grid-column:span 4;min-height:240px;}
+    .gallery-item--med{grid-column:span 4;min-height:240px;}
+    .gallery-item--sm{grid-column:span 4;min-height:240px;}
+    @media(max-width:768px){.gallery-item--main,.gallery-item--side,.gallery-item--wide,.gallery-item--med,.gallery-item--sm{grid-column:span 12;min-height:220px;}}
+    .caso-highlight{background:var(--neon);padding:4rem var(--pad-x,1.5rem);}
+    .caso-highlight__inner{max-width:1200px;margin:0 auto;}
+    .caso-highlight__label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(0,0,0,.45);margin-bottom:1rem;display:block;}
+    .caso-highlight__quote{font-size:clamp(1.2rem,3vw,2rem);font-weight:700;color:#000;line-height:1.3;max-width:820px;margin:0;}
+    .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1.5rem;}
+    .tool-item{display:flex;align-items:flex-start;gap:.75rem;padding:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);}
+    .tool-item__dot{width:6px;height:6px;background:var(--neon);border-radius:50%;margin-top:.45rem;flex-shrink:0;}
+    .tool-item__name{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:.2rem;}
+    .tool-item__detail{font-size:.75rem;color:rgba(255,255,255,.4);}
+    .learning-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem;}
+    .learning-tag{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.4rem .9rem;border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.7);background:rgba(255,255,255,.04);}
+    .proj-nav{background:#111;border-top:1px solid rgba(255,255,255,.06);padding:3rem var(--pad-x,1.5rem);}
+    .proj-nav__inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+    .proj-nav__label{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.4rem;display:block;}
+    .proj-nav__link{font-size:1rem;font-weight:700;color:#fff;text-decoration:none;transition:color .2s;}
+    .proj-nav__link:hover{color:var(--neon);}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-<nav class="nav" aria-label="Navegación principal">
-  <a href="index.html" class="nav__logo">JRDI</a>
-  <ul class="nav__links" role="list">
-    <li><a href="index.html#sobre">Sobre mí</a></li>
-    <li><a href="index.html#proyectos">Proyectos</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
-  <button class="nav__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-<div class="mobile-menu" id="mobileMenu" role="dialog" aria-hidden="true">
-  <ul role="list">
-    <li><a href="index.html#sobre">Sobre mí</a></li>
-    <li><a href="index.html#proyectos">Proyectos</a></li>
-    <li><a href="index.html#contacto">Contacto</a></li>
-  </ul>
-</div>
-<main id="main-content">
-
-  <section class="pdx-hero">
-    <div class="pdx-hero-bg" style="background-image:url('img/puma.jpg')"></div>
-    <div class="pdx-hero-overlay"></div>
-    <div class="pdx-hero-inner">
-      <a href="index.html#proyectos" class="pdx-back">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        Proyectos
-      </a>
-      <span class="pdx-cat">Roll Out de Marca</span>
-      <h1 class="pdx-title">Puma<br/>Roll Out</h1>
-      <p class="pdx-sub">Puma — Tiendas Bold y retail multimarca</p>
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  <nav class="nav" aria-label="Navegación principal">
+    <a href="index.html" class="nav__logo" aria-label="Jorge Rojas — Inicio">JRDI</a>
+    <ul class="nav__links" role="list">
+      <li><a href="index.html#sobre">Sobre mí</a></li>
+      <li><a href="index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+    <button class="nav__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú móvil" aria-hidden="true">
+    <ul role="list">
+      <li><a href="index.html#sobre">Sobre mí</a></li>
+      <li><a href="index.html#proyectos">Proyectos</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </div>
+  <main id="main-content">
+    <section class="proj-hero" aria-label="Encabezado del proyecto">
+      <div class="proj-hero__bg" aria-hidden="true"></div>
+      <div class="proj-hero__overlay" aria-hidden="true"></div>
+      <div class="proj-hero__content">
+        <a href="index.html#proyectos" class="back-link" style="margin-bottom:2rem;display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Proyectos
+        </a>
+        <span class="proj-hero__cat">Roll Out de Marca</span>
+        <h1 class="proj-hero__title">Puma<br/>Roll Out</h1>
+        <p class="proj-hero__sub">Escala nacional. Desde La Serena hasta Concepción, un solo estándar de identidad en cada punto de venta.</p>
+      </div>
+    </section>
+    <div class="proj-meta" role="complementary">
+      <div class="proj-meta__inner">
+        <div class="proj-meta__item"><span class="proj-meta__lbl">Cliente</span><span class="proj-meta__val">Puma — Tiendas Bold y retail multimarca</span></div>
+        <div class="proj-meta__item"><span class="proj-meta__lbl">Categoría</span><span class="proj-meta__val">Roll Out de Marca</span></div>
+        <div class="proj-meta__item"><span class="proj-meta__lbl">Año</span><span class="proj-meta__val">2022 – 2024</span></div>
+        <div class="proj-meta__item"><span class="proj-meta__lbl">Cobertura</span><span class="proj-meta__val">La Serena — Concepción</span></div>
+      </div>
+    </div>
+    
+  <section class="proj-section">
+    <div class="proj-section__inner" style="max-width:820px">
+      <span class="proj-section__label reveal">01 — El encargo</span>
+      <h2 class="proj-section__heading reveal">Elevar el estándar en terreno compartido</h2>
+      <p class="proj-section__text reveal">Con Puma la escala fue mayor: campañas a lo largo de todo el país, personalizando espacios en tiendas de retail desde La Serena hasta Concepción. El mayor desafío no fue la distancia geográfica — fue el <strong>espacio compartido</strong>.</p>
+      <p class="proj-section__text reveal">En las tiendas Bold, Puma comparte piso con su competencia directa. La estrategia fue clara: tomar como referencia las <strong>tiendas propias de Puma a nivel mundial</strong> y trasladar ese nivel de identidad y detalle a un formato compartido. El resultado habló solo — la diferenciación fue tan evidente que los competidores terminaron replicando el enfoque.</p>
     </div>
   </section>
-
-  <div class="pdx-meta">
-    <div class="pdx-meta-row">
-      <div class="pdx-meta-item"><span class="pdx-meta-lbl">Cliente</span><span class="pdx-meta-val">Roll Out de Marca</span></div>
-      <div class="pdx-meta-item"><span class="pdx-meta-lbl">Categoría</span><span class="pdx-meta-val">2022–2024</span></div>
-      <div class="pdx-meta-item"><span class="pdx-meta-lbl">Año</span><span class="pdx-meta-val">Cobertura</span></div>
-      <div class="pdx-meta-item"><span class="pdx-meta-lbl">La Serena — Concepción</span><span class="pdx-meta-val">
-
-<section class="pdx-section">
-  <div class="pdx-wrap-narrow">
-    <span class="pdx-label">01 — El encargo</span>
-    
-    <p class="pdx-text">Con Puma la escala fue mayor: campañas a lo largo de todo el país, desde La Serena hasta Concepción. El mayor desafío no fue la distancia — fue el <strong>espacio compartido</strong>.</p><p class="pdx-text">En las tiendas Bold, Puma comparte piso con su competencia directa. La estrategia: tomar como referencia las tiendas propias de Puma a nivel mundial y trasladar ese nivel de identidad a un formato compartido. El resultado fue tan evidente que los competidores terminaron replicando el enfoque.</p>
-  </div>
-</section>
-
-<div class="pdx-gallery">
-  <div class="pdx-gallery-inner">
-    <span class="pdx-gallery-label">Campañas Puma 2022 – 2024</span>
-    <div class="pdx-grid" style="grid-template-columns:repeat(12,1fr)">
-      <a class="pdx-img pdx-h-xl" style="grid-column:span 8" href="img/puma.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma.jpg" alt="Roll Out Puma tienda Bold" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-md" style="grid-column:span 4" href="img/puma-2.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-2.jpg" alt="Puma — campaña Wild Rider" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-lg" style="grid-column:span 3" href="img/puma-3.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-3.jpg" alt="Puma display zapatillero — portrait" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-md" style="grid-column:span 5" href="img/puma-4.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-4.jpg" alt="Puma intervención tienda" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-md" style="grid-column:span 4" href="img/puma-5.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-5.jpg" alt="Puma espacio compartido Bold" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-lg" style="grid-column:span 3" href="img/puma-6.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-6.jpg" alt="Puma Fearless Football — portrait" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-md" style="grid-column:span 5" href="img/puma-7.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-7.jpg" alt="Puma For All Time" loading="lazy"/>
-    </a><a class="pdx-img pdx-h-md" style="grid-column:span 4" href="img/puma-8.jpg" target="_blank" rel="noopener noreferrer">
-      <img src="img/puma-8.jpg" alt="Detalle display Puma — portrait" loading="lazy"/>
-    </a>
+  <div class="proj-gallery">
+    <div class="proj-gallery__inner">
+      <span class="proj-section__label reveal">Campañas 2022 – 2024</span>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item--main reveal"><img src="img/puma.jpg" alt="Roll Out Puma en tienda Bold" loading="lazy"/></div>
+        <div class="gallery-item gallery-item--side reveal"><img src="img/puma-2.jpg" alt="Campaña Puma Wild Rider" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"/></div>
+        <div class="gallery-item gallery-item--wide reveal"><img src="img/puma-3.jpg" alt="Display Puma Fearless Football" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"/></div>
+        <div class="gallery-item gallery-item--med reveal"><img src="img/puma-4.jpg" alt="Vitrina Puma Suede" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"/></div>
+        <div class="gallery-item gallery-item--sm reveal"><img src="img/puma-5.jpg" alt="Detalle display Puma" loading="lazy" onerror="this.closest('.gallery-item').style.display='none'"/></div>
+      </div>
     </div>
   </div>
-</div>
-
-<div class="pdx-highlight">
-  <div class="pdx-hl-inner">
-    <span class="pdx-hl-label">Insight del proyecto</span>
-    <p class="pdx-hl-quote">"Cuando la competencia replica tu enfoque, no necesitas más datos: la dirección era la correcta."</p>
-  </div>
-</div>
-
-<section class="pdx-section">
-  <div class="pdx-wrap">
-    <span class="pdx-label">02 — Solución y herramientas</span>
-    
-    <div class="pdx-split"><p class="pdx-text">Propuesta y validación 3D por locación, adaptando el concepto de cada campaña a las dimensiones reales del espacio asignado. Coordinación logística nacional con equipos de instalación en múltiples ciudades.</p><div><div class="pdx-tools"><div class="pdx-tool"><span class="pdx-tool-dot"></span><div><div class="pdx-tool-name">3DS Max</div><div class="pdx-tool-desc">Propuesta y validación 3D por locación</div></div></div><div class="pdx-tool"><span class="pdx-tool-dot"></span><div><div class="pdx-tool-name">Coordinación nacional</div><div class="pdx-tool-desc">Logística de producción multi-ciudad</div></div></div><div class="pdx-tool"><span class="pdx-tool-dot"></span><div><div class="pdx-tool-name">Análisis de competencia</div><div class="pdx-tool-desc">Lectura del espacio compartido como ventaja</div></div></div></div></div></div>
-  </div>
-</section>
-
-<section class="pdx-section">
-  <div class="pdx-wrap">
-    <span class="pdx-label">03 — Impacto y habilidades</span>
-    
-    <div class="pdx-metrics"><div class="pdx-metric"><div class="pdx-metric-val">2</div><div class="pdx-metric-lbl">Años de campañas nacionales</div></div><div class="pdx-metric"><div class="pdx-metric-val">País</div><div class="pdx-metric-lbl">Cobertura La Serena — Concepción</div></div><div class="pdx-metric"><div class="pdx-metric-val">1°</div><div class="pdx-metric-lbl">Referente en tiendas Bold</div></div></div><div class="pdx-tags"><span class="pdx-tag">Roll out nacional</span><span class="pdx-tag">Estrategia de marca</span><span class="pdx-tag">Gestión multi-ciudad</span><span class="pdx-tag">Diferenciación en espacio compartido</span></div>
-  </div>
-</section></span></div>
+  <div class="caso-highlight">
+    <div class="caso-highlight__inner">
+      <span class="caso-highlight__label">Validación del mercado</span>
+      <p class="caso-highlight__quote">"Cuando la competencia replica tu enfoque, no necesitas más datos: la dirección era la correcta."</p>
     </div>
   </div>
-
-  Nike — Roll Out
-
-  <div class="pdx-nav">
-    <div class="pdx-nav-inner">
-      <div><span class="pdx-nav-lbl">Anterior</span><a href="Adidas — Roll Out" class="pdx-nav-link">← nike.html</a></div>
-      <a href="index.html#proyectos" class="btn btn--outline" style="font-size:11px;padding:10px 22px;letter-spacing:.15em;min-width:auto">Ver todos</a>
-      <div style="text-align:right"><span class="pdx-nav-lbl">Siguiente</span><a href="undefined" class="pdx-nav-link">adidas.html →</a></div>
+  <section class="proj-section">
+    <div class="proj-section__inner" style="max-width:720px">
+      <span class="proj-section__label reveal">02 — Herramientas y aprendizajes</span>
+      <h2 class="proj-section__heading reveal">Identidad de marca como ventaja competitiva</h2>
+      <p class="proj-section__text reveal">Este proyecto consolidó la capacidad de <strong>leer el contexto competitivo</strong> y usarlo como input de diseño. No solo se trataba de implementar la campaña — se trataba de implementarla mejor que cualquier otra marca del mismo espacio, con los mismos metros cuadrados.</p>
+      <div class="tools-grid">
+        <div class="tool-item reveal"><span class="tool-item__dot"></span><div><div class="tool-item__name">3DS Max</div><div class="tool-item__detail">Propuesta y validación 3D por locación</div></div></div>
+        <div class="tool-item reveal"><span class="tool-item__dot"></span><div><div class="tool-item__name">Coordinación nacional</div><div class="tool-item__detail">Logística de producción e instalación multi-ciudad</div></div></div>
+        <div class="tool-item reveal"><span class="tool-item__dot"></span><div><div class="tool-item__name">Análisis de competencia</div><div class="tool-item__detail">Lectura del espacio compartido como ventaja</div></div></div>
+      </div>
+      <div class="learning-tags reveal" style="margin-top:1.5rem">
+        <span class="learning-tag">Roll out nacional</span>
+        <span class="learning-tag">Estrategia de marca en retail</span>
+        <span class="learning-tag">Gestión multi-ciudad</span>
+        <span class="learning-tag">Diferenciación en espacio compartido</span>
+      </div>
     </div>
-  </div>
-
-  <section class="contacto" id="contacto">
-    <div class="container">
-      <div class="section-header"><h2 class="section-title">Contacto</h2></div>
-      <p class="contacto__invite reveal">¿Tienes un proyecto en mente?<br/>Hablemos.</p>
-      <address class="contacto__links">
-        <a href="mailto:jrojasmo89@gmail.com" class="contacto__link reveal"><span class="contacto__lbl">Email</span><span class="contacto__val">jrojasmo89@gmail.com</span></a>
-        <a href="tel:+56994848677" class="contacto__link reveal"><span class="contacto__lbl">Teléfono</span><span class="contacto__val">+56 9 9484 8677</span></a>
-        <a href="https://linkedin.com/in/jorgerojasindustrialdisenio" target="_blank" rel="noopener noreferrer" class="contacto__link reveal"><span class="contacto__lbl">LinkedIn</span><span class="contacto__val">jorgerojasindustrialdiseño</span></a>
-      </address>
-    </div>
-    <div class="contacto__bg" aria-hidden="true">JR</div>
   </section>
-
-</main>
-<footer class="footer"><div class="container footer__inner"><span>© 2026 Jorge Rojas</span><span>Diseño Industrial Gráfico</span></div></footer>
-<script src="main.js"></script>
-<script>
-  new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*60);} });},{threshold:0.08})
-  .observe && document.querySelectorAll('.reveal').forEach(el=>
-    new IntersectionObserver((es)=>{if(es[0].isIntersecting){es[0].target.classList.add('visible');}},{threshold:0.08}).observe(el)
-  );
-</script>
+  
+    <nav class="proj-nav" aria-label="Navegación entre proyectos">
+      <div class="proj-nav__inner">
+        <div><span class="proj-nav__label">Anterior</span><a href="nike.html" class="proj-nav__link">← Nike — Roll Out</a></div>
+        <a href="index.html#proyectos" class="btn btn--outline" style="font-size:.75rem;padding:.6rem 1.4rem;letter-spacing:.15em">Ver todos</a>
+        <div style="text-align:right"><span class="proj-nav__label">Siguiente</span><a href="adidas.html" class="proj-nav__link">Adidas — Roll Out →</a></div>
+      </div>
+    </nav>
+    <section class="contacto" id="contacto" aria-labelledby="contacto-titulo">
+      <div class="container">
+        <div class="section-header"><h2 class="section-title" id="contacto-titulo">Contacto</h2></div>
+        <p class="contacto__invite reveal">¿Tienes un proyecto en mente?<br/>Hablemos.</p>
+        <address class="contacto__links">
+          <a href="mailto:jrojasmo89@gmail.com" class="contacto__link reveal"><span class="contacto__lbl">Email</span><span class="contacto__val">jrojasmo89@gmail.com</span></a>
+          <a href="tel:+56994848677" class="contacto__link reveal"><span class="contacto__lbl">Teléfono</span><span class="contacto__val">+56 9 9484 8677</span></a>
+          <a href="https://linkedin.com/in/jorgerojasindustrialdisenio" target="_blank" rel="noopener noreferrer" class="contacto__link reveal"><span class="contacto__lbl">LinkedIn</span><span class="contacto__val">jorgerojasindustrialdiseño</span></a>
+        </address>
+      </div>
+      <div class="contacto__bg" aria-hidden="true">JR</div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner"><span>© 2026 Jorge Rojas</span><span>Diseño Industrial Gráfico</span></div>
+  </footer>
+  <script src="main.js"></script>
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*60); obs.unobserve(e.target); } });
+    }, {threshold:0.1});
+    reveals.forEach(el=>obs.observe(el));
+  </script>
 </body>
 </html>
